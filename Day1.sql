@@ -22,4 +22,4 @@ FROM
 GROUP BY
     customer_name
 HAVING
-    times >= 2;
+    COUNT(DISTINCT activity) >= 2; -- HAVING 子句是用來取代 WHERE 搭配聚合函數 (aggregate function) 進行條件查詢，因為 WHERE 不能與聚合函數一起使用。
