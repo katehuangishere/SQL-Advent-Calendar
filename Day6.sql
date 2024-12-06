@@ -34,7 +34,7 @@ ON
     p.bear_id = t.bear_id
 WHERE
     t.date BETWEEN '2024-12-01' AND '2024-12-31'
-GROUP BY
+GROUP BY  -- SQL 的規則是，當使用聚合函數（如 SUM()、AVG() 等）時，所有非聚合列（如 p.bear_id 和 p.bear_name）都必須出現在 GROUP BY 中。
     p.bear_id, p.bear_name
 ORDER BY 
     total_distance_traveled DESC
