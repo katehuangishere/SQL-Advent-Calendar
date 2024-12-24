@@ -16,7 +16,7 @@ Table name: deliveries
 SELECT 
     delivery_date,
     gifts_delivered,
-    SUM(gifts_delivered) OVER (ORDER BY delivery_date) as total_gifts
+    SUM(gifts_delivered) OVER (ORDER BY delivery_date) as total_gifts  -- 加了 OVER 後，可以指定按照 delivery_date 順序累加，保留每一行的數據並顯示到該日期為止的累計總和。
 FROM 
     deliveries
 ORDER BY 
